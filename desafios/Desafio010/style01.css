@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'desafio';
+    src: url('/pacote-projeto-d010/fontes/idroid.otf'), format('opentype');
+    font-weight: normal;
+}
+
+:root{
+    --cor01: #c5ebd6;
+    --cor02: #83e1ad;
+    --cor03: #3ddc84;
+    --cor04: #2fa866;
+    --cor05: #1a5c37;
+    --cor06: #063d1e;
+
+    --font-normal: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-especial: 'Bebas Neue', sans-serif;
+    --fonte-android: 'desafio', sans-serif;
+}
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: var(--cor01);
+    font-family: var(--font-normal);
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor04), var(--cor06));
+    padding: 30px;
+    text-align: center;
+}
+header h1{
+    font-family: var(--fonte-especial);
+    font-size: 3em;
+    font-weight: normal;
+    color: white;
+    text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.253);
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+header p{
+    padding-top: 10px;
+    font-size: 1.4em;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    
+    text-shadow: 5px 5px rgba(0, 0, 0, 0.137);
+}
+/*está faltando alguma configuração pra não deixar o texto não e ajustar em telas pequenas.*/
+nav{
+    background-color: var(--cor06);
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.486);
+    padding-bottom: 10px;
+}
+nav a{
+    text-decoration: none;
+    color: var(--cor02);
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-left: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    transition: .5s;
+}
+nav a:hover{
+    text-decoration: underline;
+    background-color: var(--cor03);
+    color: var(--cor05)
+}
+main{
+    margin: auto;
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin-bottom: 30px;
+    margin-top: 2px;
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.123);
+}
+main h1{
+    color: var(--cor06);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
+    padding-top: 20px;
+    margin: 20px;
+}
+main h2{
+    color: var(--cor05);
+    background-image: linear-gradient(to right, var(--cor02), transparent);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.3em;
+    padding-left: 10px;
+}
+main p{
+    text-indent: 30px;
+    text-align: justify;
+    padding: 10px;
+    line-height: 2em;
+    font-size: 1.1em;
+}
+main strong{
+    color: var(--cor06);
+}
+main a{
+    background-color: var(--cor02);
+    color: var(--cor06);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0px 7px;
+
+}
+main a.externo::after{
+    content: '\00A0\00A0\1F517';
+}
+main.pequena{
+    margin: auto;
+    display: block;
+}
+aside{
+    background-color: var(--cor02);
+    margin: 20px 20px 0px 20px;
+    border-radius: 12px;
+    border: 3px solid var(--cor06);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.274);
+}
+aside h3{
+    background-color: var(--cor05);
+    color: white;
+    padding: 10px;
+    font-size: 1.4em;
+    font-weight: normal;
+    border-radius: 10px 10px 0px 0px;
+}
+aside ul{
+    list-style-type: '\1F5F8\00A0\00A0';
+    list-style-position: inside;
+    columns: 2;
+    margin-left: 80px;
+}
+footer{
+    background-color: var(--cor06);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.9em;
+}
+footer a{
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor02);
+    text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.137);
+}

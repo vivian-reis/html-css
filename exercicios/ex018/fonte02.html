@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'love';
+            src: url(fontes/love\ larry\ ttf.ttf), format(truetype);
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'love2';
+            src: url(fontes/love_story.ttf.ttf), format(truetype);
+            font-weight: normal;
+            font-style: normal;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            font-family: 'love', Times, serif;
+            font-size:  3em;
+            font-weight: normal;
+        }
+        h2{
+            font-family: 'love2', Times, serif;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<h1>Fontes Externas</h1>
+<h2>Como baixar fontes externas?</h2>
+<p>Segue o passo a passo:</p>
+<ol>
+    <li>Acessar o site <a href="https://www.dafont.com/pt/">https://www.dafont.com/pt/</a> para selecionar a fonte desejada;</li>
+    <li>baixar a fonte e descompactar o arquivo zip.</li>
+    <li>criar uma pasta "fontes" e salvá-la dentro do seu projeto;</li>
+    <li>usar a regra "@font-face com os parâmetros font-family e scr: url.</li>
+    <li>dar ctrl + espaço para localizar a fonte dentro dos parênteses da url;</li>
+    <li>acrescentar o parâmetro format (de acordo com os tipos informados abaixo);</li>
+    <li>nomear a fonte com o nome desejado entre aspas simples. Neste exemplo, nomeei a font-family como 'love'.</li>
+</ol>
+<h2>Tipos de Formatos</h2>
+<p>Tipos de format():</p>
+<ul>
+    <li>Opentype (otf);</li>
+    <li>Truetype (ttf);</li>
+    <li>Embedded-opentype;</li>
+    <li>Truetype-aat (Apple Advanced Typography);</li>
+    <li>Svg.</li>
+</ul>
+<p>Formato usado nesta página: truetype.</p>
+<p>Geralmente fontes dos tipos otf e ttf funcionam em todos os navegadores.</p>
+</html>

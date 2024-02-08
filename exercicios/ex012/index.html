@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos</title>
+</head>
+<body>
+    <h1>Inserindo Vídeos Localmente</h1>
+    <p>Este vídeo está hospedado no meu próprio servidor.</p>
+<video width="500" poster="imagem/Pausa para o Café....png" controls>
+    <source src="midia/convertido.mp4" type="video/mp4">
+    <source src="midia/convertido.webm" type="video/webm">
+    <source src="midia/pexels-afonso-oliveira-9823119 (1080p).mp4" type="video/mpa">
+    <source src="midia/pexels-afonso-oliveira-9823119 (1080p).ogv" type="video/ogg">
+    <p>Seu navegador não é compatível com reprodução de vídeos.</p>
+</video>
+<p>Usei a tag &lt;video&gt; com o parâmetro <strong>width</strong> em 500 para deixar o vídeo em um tamanho adequado ao site. Usei o parâmetro <strong>poster</strong> para colocar uma capa inicial no vídeo e o parâmetro <strong>controls</strong> para deixar o controle do vídeo visual.</p>
+<p>Também usei a tag &lt;source&gt; dentro da tag &lt;video&gt; para deixar mais de um vídeo disponível, para que seja executado nos principais navegadores. Porém esta opção pode deixar a hospedagem bem mais cara ao cliente.</p>
+
+<h1>Inserindo Vídeos do Youtube</h1>
+<iframe width="500" height="315" src="https://www.youtube.com/embed/t3WZIL_VwYg?si=3FmPweCKRrMhWPzr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</body>
+</html>

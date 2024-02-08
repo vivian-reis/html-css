@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borda Personalizada</title>
+    <style>
+        h1{
+            border: 20px solid black;
+            padding: 10px;
+            border-image-source: url(imagens/borda.png);
+            border-image-slice: 7;
+            border-image-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<h1>Teste de Borda</h1>
+<h2>O que eu aprendi?</h2>
+<p>Como eu não consegui criar uma borda pelo Gimp, criei pelo site <a href="https://www.favicon.cc/">https://www.favicon.cc/</a>.</p>
+<p>Para usar a borda criada, segui o passo a passo abaixo:</p>
+<ol>
+    <li>Usei o parâmetgro border, que é necessário para o sistema reconhecer a borda personalizada nos passos seguintes;</li>
+    <li>Usei o parâmetro 'border-image-source' para localizar o arquivo com a borda desenhada;</li>
+    <li>Usei o parâmetro 'border-image-slice'(inicialmente em 20px), para "fatiar" a borda criada. Este recurso faz com que a borda se espalhe pela caixa selecionada. </li>
+    <li>Usei o parâmetro 'border-image-repeat em 'repeat' para igualar o desenho por toda a borda.</li>
+    <li> Por sim, usei o DevTools para ajustar os parâmetros do CSS.</li>
+</ol>
+</html>

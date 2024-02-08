@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio das Imagens</title>
+</head>
+<body>
+    <h1>Imagem Flexível</h1>
+    <p>Experimente ampliar o tamanho de sua janela para aproveitar a melhor esperiência. &#x26F2; </p>
+<picture>
+    <source media="(max-width: 750px)" srcset="midias/italia_300.png" type="image/png">
+    <source media="(max-width: 1050px)" srcset="midias/italia_700.png" type="image/png">
+    <img src="midias/italia_1000.png" alt="Imagens de um rio na Itália">
+</picture>
+<h1>Segunda Imagem</h1>
+<picture>
+    <source media="(max-width: 790px)" srcset="midias/paisagem-p.png" type="image/png">
+    <source media="(max-width: 1250px)" srcset="midias/paisagem-m.png" type="image/png">
+    <img src="midias/paisagem-g.png" alt="Uma mulher de braços abertos olhando o horizonte.">
+</picture>
+</body>
+</html>

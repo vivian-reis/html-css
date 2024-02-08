@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a{
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover{
+            color: black;
+            text-decoration: underline;
+        }
+        a:active{
+            color: yellow;
+        }
+        .especial::before{
+            content: '↝';
+        }
+        .especial::after{
+            content: '↜';
+        }
+    </style>
+</head>
+<body>
+    <h1>Personalizando Links</h1>
+    <ul>
+        <li><a href="https://gustavoguanabara.github.io" target="_blank">Repositório GitHub</a></li>
+        <li><a href="https://youtube.com/cursoemvideo" target="_blank" class="especial">Canal do Youtube</a></li>
+        <li><a href="https://www.cursoemvideo.com" target="_blank" class="especial">Site do Curso em Vídeo</a></li>
+    </ul>
+    <h2>O que aprendi?</h2>
+    <p>Que posso definir o design para links, selecionando a tag a.</p>
+    <p>Além da opção 'hover', que muda o texto quando o mouse está sobre ele, aprendi a usar a opção 'active', que deixa o texto, neste exemplo, em amarelo quando está clicado.</p>
+    <p>Usei o 'text-decoration' em 2 cenários:</p>
+    <ul>
+        <li>O primeiro com 'none' para tirar o 'sublinhado' do link. </li>
+        <li>Já o segundo com 'underline' para aparecer o sublinhado quando o mouse estiver sobre o link.</li>
+    </ul>
+    <p>Também aprendi a usar pseudo-elementos e coloquei os símbolos ↝ e ↜ nos links "especiais". Pra isso, acessei o site <a href="https://erikasarti.com/html/dingbats-simbolos-desenhos" target="_blank">https://erikasarti.com/html/dingbats-simbolos-desenhos</a>.</p>
+</body>
+</html>

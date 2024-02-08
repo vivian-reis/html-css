@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping Tags</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: dimgray;
+            margin: 0px;
+        }
+        header{
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px 0px;
+            box-shadow: 2px 1px 7px 1px rgba(0, 0, 0, 0.336);
+        }
+        nav{
+            background-color: rgb(107, 102, 102);
+            padding: 3px;
+            box-shadow: 5px 3px 7px 1px rgba(0, 0, 0, 0.781);
+            border-radius: 3px;
+        }
+        nav >a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        nav > a:hover{
+            text-decoration: underline;
+        }
+        main{
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        h1, h2, h3{
+            text-align: center;
+        }
+        article{
+            background-color: lightgray;
+            border-radius: 10px 0px 10px 0px;
+        }
+        article > aside{
+            background-color: rgb(167, 167, 167);
+            border-radius: 0px 0px 10px 0px;
+            padding: 3px;
+        }
+        article > img{
+            border-radius: 5px;
+        }
+        footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 4px;
+            margin: 0px;
+        }
+        footer >p{
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+        <nav>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </nav>
+    </header>
+    <main>
+        <h1>O que aprendi hoje?</h1>
+        <section id="tags">
+            <article>
+                <h2>Tags Semânticas de Agrupamentos</h2>
+                <p>Seguem as tags que usei na criação deste site:</p>
+                <dl>
+                    <dt>&lt;Header&gt;</dt>
+                    <dd>É o cabeçalho de um site.</dd>
+                    <dt>&lt;Nav&gt;</dt>
+                    <dd>É a área destinada aos links de nagegação de uma página. Neste site, está dentro da tag &lt;header&gt;.</dd>
+                    <dt>&lt;Main&gt;</dt>
+                    <dd>É o corpo principal do site. Dentro desta tag temos as tags section, article e aside que veremos a seguir.</dd>
+                    <dt>&lt;Section&gt;</dt>
+                    <dd>Esta tag divide o conteúdo principal em partes. Exemplo, um site de notícias pode dividir os assuntos por econima, esportes e etc.</dd>
+                    <dt>&lt;Article&gt;</dt>
+                    <dd>Pensando em um site de notícias, dentro de uma seção, por exemplo de esportes, teríamos artigos diferentes para cada esporte, exemplo: futebol, volei e/ou basquete. Mas é importante entender que um artigo não está "preso" dentro de uma seção e que podemos ter seções dentro de um artigo.</dd>
+                    <dt>&lt;Aside&gt;</dt>
+                    <dd>É um complemento do conteúdo principal de um artigo ou seção.</dd>
+                    <dt>&lt;Footer&gt;</dt>
+                    <dd>É o rodapé de um site.</dd>
+                </dl>
+                <aside>Escrito por Vivian Reis</aside>
+            </article>
+        </section>
+        <section id="estilos">
+            <article>
+                <h2>Estilos usados em cada tag</h2>
+                <p>Seguem os estilos de cada tag:</p>
+                <dl>
+                    <dt>&lt;body&gt;</dt>
+                    <dd>Defini a fonte e a cor de funto usadas em todo o site Também tirei a margem (margin: 0px).</dd>
+                    <dt>&lt;header&gt;</dt>
+                    <dd>Defini a cor de fundo do cabeçalho branca, com espaçamento (padding) e com margem em 10px.</dd>
+                    <dt>&lt;nav&gt;</dt>
+                    <dd>Esta tag está dentro de &lt;header&gt; e defini uma cor mais escura para destacar e o espaçamento. Além disso, fiz mais algumas especificações:</dd>
+                    <ul>
+                        <li><strong>nav > a</strong> para definir a cor do texto dos links como branca, sem o sublinhado, em negrito em com margens para separá-los.</li>
+                        <li><strong>nav > a: hover</strong> para mostrar o sublinhado quando o mouse estiver acima do link.</li>
+                    </ul>
+                    <dt>&lt;main&gt;</dt>
+                    <dd>Defini o funto branco e a margem em 10px.</dd>
+                    <dt>&lt;article&gt;</dt>
+                    <dd>Defini um cinza claro para mostrar a caixa dos artigos. E também fiz mais algumas especificações:</dd>
+                    <ul>
+                        <li><strong>article > aside</strong> para definir a cor de fundo um pouco mais escura e também o espaçamento da caixa. Percebi que as duas tags &lt;aside&gt; estão visualemnte com tamanhos diferentes, isso porque coloquei um parágrafo na tag aside do segundo artigo, enquanto no primeiro artigo, escrevi diretamente na tag.</li>
+                    </ul>
+                    <dt>&lt;footer&gt;</dt>
+                    <dd>Coloquei o fundo preto, a cor da fonte branca, o texto centralizado e também defini o espaçamento e a margem zerada. A margem zerada foi importante para a caixa ir até o limite da tela do navegador.</dd>
+                    <ul>
+                        <li><strong>footer > p </strong>para tirar a margem da caixa do parágrafo.</li>
+                    </ul>
+                </dl>
+                <aside>
+                    <p> Por Vivian Reis.</p>
+                </aside>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>Sombras nas Caixas</h2>
+                <p>Aprendi a usar o box-shadow pelo Devtools para definir as características da sombra de determinada caixa. Pra isso, usei a tag &lt;nav&gt; como exemplo. Descobri que para ter acesso a tela de "add box shadow", preciso primeiro ter o parâmetro de "box-shadow" no CSS (diferente da aula do Curso em Vídeo).</p>
+                <p>A partir daí, eu copio a configuração que aparecerá no Devtools no CSS.</p>
+                <p>Além disso é importante configurar a transparência da cor black no CSS, geralmente de baixo para cima e não de cima para baixo porque a cor da sombra não deve ser sólida.</p>
+                <img src="imagens/Captura de tela 2024-01-31 181752.png" alt="">
+                <aside>Escrito por Vivian Reis</aside>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>Bordas Arredondadas</h2>
+                <p>Para arredondar as bordas usamos "border-radius", como feito nos seletores, header, nav, main e article.</p>
+                <p>Obs: tentei colocar um espaçamento entre o texto e a caixa dos artigos, mas não consegui deixar a caixa de aside do mesmo tamanho. Mesmo mexendo em padding e margin.</p>
+                <aside>Escrito por Vivian Reis</aside>
+            </article>
+        </section>
+
+    </main>
+    <footer>
+        <p>Desenvolvido por Curso em Vídeo.</p>
+    </footer>
+</body>
+</html>

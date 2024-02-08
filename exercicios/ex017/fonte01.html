@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes em CSS</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+        h1{
+            font: italic 600 3em 'Work Sans', sans-serif;
+        }
+        h2{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2em;
+        }
+        h3{
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Fontes</h1>
+    <p>Aprendi que ao selecionar a font-family como 'Arial, Helvetica, sans-serif", o dispositivo do usuário irá buscar pela fonte Arial, mas se não encontrar, procurará pela Helvetica e por fim, usará qualquer fonte sem serif que localizar. Isso é importante para não limitar as opções, já que existe a possibilidade do smartphone, tablet ou smartv não ter a fonte especificada.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum accusantium nemo commodi repellendus eligendi. Esse molestias aspernatur obcaecati culpa illo inventore fuga, nemo eveniet veritatis quae, vitae numquam aliquid laboriosam!</p>
+    <h2>Subtítulo do Exercício</h2>
+    <p>Já nos títulos determinei a ordem de Times New Roman, Times, serif.</p>
+    <h2>Tamanhos das Fontes</h2>
+    <h3>Medidas Absolutas</h3>
+    <p>As medidas absolutas são: cm, mm, in (polegadas), px (pixel), pt (ponto) e pc (paica), que são medidas absolutas. Mas a apresentação pode ser diferentes para cada tela (smartphone, tablet, smartv).</p>
+    <h3>Medidas Relativas</h3>
+    <p>As medidas relativas são: em (altura da letra m maiúscula), ex (altura da letra x minúscula), rem (é tipo ao em, mas relativo ao rut), vw (largura da tela), h (largura da tela) e %. Existem outras medidas, mas iremos usar a em.</p>
+    <p>A W3C recomenda o uso das medidas em e px. E geralmente 16px correspondem a 1em. E é melhor usar o em porque ele trabalha com % do tamanho da fonte padrão e será importante ao mostrar o site em tamanhos de telas variados.</p>
+    <p>Importante! Não pode ter expaço entre o número e a medida desejada.</p>
+    <h1>Peso, Estilo e Shorthand</h1>
+    <p>no h1 usei os seguintes parâmetros:</p>
+    <ol>
+        <li>font-family: 'Work Sans', sans-serif;</li>
+        <li>font-weight: bolder;</li>
+        <li>font-size: 3em;</li>
+        <li>font-style: italic;</li>
+    </ol>
+    <p>Mas é possível resumir todos esses parâmetros em uma única linha, chamada shorthand font, que precisa respeitar a seguinte ordem:</p>
+    <ul>
+        <li>font-style -> font-weight -> font-size -> font-family</li>
+    </ul>
+    <p>Exemplo:</p>
+    <ul>
+        <li>font: italic bolder 3em 'Work Sans', sans-serif;</li>
+    </ul>
+    <p>Não precisamos colocar todas as propriedades, mas as ordem precisa sempre ser respeitada.</p>
+</body>
+</html>

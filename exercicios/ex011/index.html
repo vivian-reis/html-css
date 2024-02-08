@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTML5</title>
+</head>
+<body>
+    <h1>Imagem Dinâmica</h1>
+    <p>Tarefa: tente abrir este site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador.</p>
+    <p>Para esta imagem dinâmica, dentro da tag &lt;picture&gt; usei a tag &lt;source:media:type&gt;, com o parâmetro media no máximo (<mark style="background-color: lime;">max</mark>-width) e não no mínimo e com mais <mark style="background-color: lime;">50px</mark> acima do tamanho das imagens.</p>
+    <p>Também adicionei o caminho do arquivo no parâmetro srcset e o tipo 'imagem/png' em type.</p>
+    <p>Outra coisa importante é que <mark style="background-color: lime;">precisa ser em ordem crescente</mark> para que todas as imagens carreguem adequadamente.</p>
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png">
+        <img src="imagens/foto-g.png" alt="Imagem flexível">
+    </picture>
+    <h1>Reproduzindo Áudios</h1>
+    <p>Vamos aprender a reproduzir áudios em HTML:5.</p>
+    <audio src="midias/Calimba - E's Jammy Jams.mp3" controls autoplay></audio>
+    <p>No áudio acima usei a tag &lt;audio&gt;, que é a maneira mais simples de se adicionar um arquivo de áudio em um site. <mark>Basta informar o endereço do link no parâmetro src e adicionar o parâmetro controls autoplay</mark>. Mas não temos garantia de que o áudio será reproduzido adequadamente em todos os navegadores.</p>
+    <p>Por isso, o recomendado é usar a tag abaixo:</p>
+    <p>Adicionamos tags &lt;source&gt;entre as tags &lt;audio&gt;, preenchemos o parâmetro src com o endereço do arquivo de mídia e o campo type com o tipo de mídia: audio/mpeg para MP3 e audio/ogg para OGG. O arquivo do tipo wav não é recomendado porque são grandes e pesados. Este modelo pode ser usado como download.</p>
+    <p>Além disso, dentro da tag &lt;audio&gt;, incluímos o parâmetro preload com metadata porque só carregará algumas informações básicas do arquivo. E a opção auto (ou nenhuma) significa que o site só executará o áudio depois de baixá-lo por completo (o que é muito ruim para arquivos grandes). E a opção none não carrega nada. </p>
+    <p>O loop irá reproduzir o áudio automaticamente.</p>
+    <audio preload="metadata" autoplay controls loop>
+        <source src="midias/guanacast-33.mp3" type="audio/mpeg">
+        <source src="midias/guanacast-33.mp3" type="audio/ogg">
+        <p>Infelizmente seu navegador não consegue reproduzir áudio. <a href="midias/guanacast-33.mp3">Clique aqui para baixar o arquivo.</a></p>
+    </audio>
+    </body>
+</html>

@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* Usado para que o CSS possa reconhecer a fonte do google fonts.*/
+
+@font-face{
+    font-family: 'Android';
+    src: url('/pacote-projeto-d010/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+/*É muito importante não esquecer de colocar o @font-face para que o CSS reconheça a fonte baixada. Diferente dos exercícios, o caminho do arquivo e o tipo do formato estão entre aspas simples, dentro dos parênteses (ainda não sei bem o motivo).*/
+:root{
+    --cor00: #c5ebd6;
+    --cor01: #83e1ad;
+    --cor02: #3ddc84;
+    --cor03: #2fa866;
+    --cor04: #1a5c37;
+    --cor05: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', sans-serif; /* retirado do google fonts.*/
+    --fonte-android: 'Android', sans-serif;
+}
+/* O :root cria variáveis dentro do CSS. É muito útil para agilizar o trabalho, já que se for necessário fazer alguma alteração do estilo, basta mudar diretamente na variável que será aplicado em todas as partes do site, onde se encontram.*/
+*{
+    margin: 0px;
+    padding: 0px;
+    /* Importante para retirar todas as margens e preenchimentos das caixas, imagens, textos, vídeos e foi imporntante para deixar tudo "acoplado".*/
+}
+body{
+    background-color: var(--cor00);
+    font-family: var(--fonte-padrao);
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor05));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+/*Min-height para aumentar a caixa do cabeçalho, padding-top para preencher todo o espaço de tela desta caixa e padding bottom para dar mais espaço entre o parágrafo do título e o menu em telas menores.*/
+header h1{
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.292);
+    font-weight: normal;
+}
+/* Font-size para aumentar em 3x o tamanho da font e margin-bottom em 40px para afastar o título do parágrafo abaixo. Também usei o font-weight normal para tirar o 'negrito' e deixar o texto mais limpo.*/
+header p{
+    color: white;
+    font-size: 1.2em;
+    font-family: var(--fonte-padrao);
+    max-width: 600px;
+    margin: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.312);
+}
+/*Font-size para aumentar o tamnanho da fonte em 1.2x, max-width para determinar o tamanho da caixa do parágrafo e fazer com que o texto não quebre em telas menores, mas se adapte. Margin auto para centralizar a caixa, já que foi adicionada a largura máxima. E o preenchimento em 10px em cada lado para dar um espacinho no texto ao diminuir a tela. */
+nav{
+    background-color: var(--cor05);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.244);
+}
+nav a{
+    text-decoration: none;
+    color: var(--cor01);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: .5s;
+}
+/*Text-decoration em nome para tirar os efeitos dos links, usei o padding em 10px para afastar os links, diferente dos exercícios, onde foram usadas as margens. Pra mim, as 2 opções dão o mesmo efeito. Border-radius para dar a borda arredondada quando for passado o mouse (como se fossem botões). A fonte em negrito e 5 segundos para dar efeito no menu.*/
+nav a:hover{
+    text-decoration: underline;
+    background-color: var(--cor03);
+    color: var(--cor05);
+}
+/*Aqui usei o hover para dar efeito de botões no menu, além de manter o sublinhado.*/
+main{
+    background-color: white;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    border-radius: 0px 0px 10px 10px;
+    min-width: 300px;
+    max-width: 1000px;
+}
+/* Coloquei largura mínima em 300px, baseando nas telas dos celulares mais antigos. E o máximo de 1000px foi encontrado através do "inspecionar", para acomodar os textos e imagens em telas grandes.*/
+/* Também aprendi a que é possível arredondar parte da caixa com "border-bottom-left-radius" e "border-bottom-right-radius", mas preferi fazer diretamente pelo "border-radius" determinando a quantidade de px para cada lado.*/
+main h1{
+    color: var(--cor05);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+/* Percebi que o que está dentro do main não precisa usra o sinal de >, mas ainda não sei o motivo.*/
+/*Aprendi que não é necessário o sinal de > quando queremos que todos os atributos dentro desta caixa sejam estilizados. Também usei o font-weight normal para tirar o 'negrito' e deixar o texto mais limpo e aumentei a fonte em 1,8x.*/
+main h2{
+    font-family: var(--fonte-android);
+    color: var(--cor04);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor01), transparent);
+    text-indent: 8px;
+    font-weight: normal;
+}
+/*Aumentei o tamanho da fonte em 1,3x para diferenciar dos parágrafos, fiz o gradiente da caixa para o lado direito, até ficar transparente e dei um pequeno espaço no início da caixa de 8px. Também usei o font-weight normal para tirar o 'negrito' e deixar o texto mais limpo.*/
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;
+}
+/*Usei a margem para distanciar os parágrafos dos títulos e das imagens. Ajustei o ainhamento, criei um espaço de 30px para o inícios dos parágrafos e dei um espaçamento na distância entre as linhas de 2 em com o line-height. */
+main strong{
+    color: var(--cor05);
+}
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor05);
+    background-color: var(--cor01);
+    padding: 2px 6px;
+}
+/*Destaquei tudos os links do main com a fonte verde e em negrito, com o fundo verde e também com um espaçamento.*/
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor03);
+}
+main a.externo::after{
+    content: '\00A0\1F517';
+}
+/*Criei a classe externo para incluir o ícone de link do emojipedia nos links que estão em main. Pra isso, coloquei o código 00A0 para dar um esaço entre o link e o símbolo.*/
+main img{
+    width: 100%;
+    /*Para as imagens ocuparem toda a largura do main.*/
+}
+main img.pequena{
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+/* Inicialmente eu usei width em 50% para diminuir o tamanho da imagem pela metade, mas ficou muito pequena em telas menores e por isso, foi substituída por max-widht em 350px. Assim a imagem ficou com um bom tamanho em todas as telas. E para centralizá-la foi necessáiro usar o display em block e margin em auto. Ao retirar um desses, a imagem não fica centralizada.*/
+div.video{
+    background-color: var(--cor05);
+    margin: 30px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 57%;
+    position: relative;
+}
+/*Criei uma div para conseguir extruturar o vídeo dentro do site. Coloquei margem negativa de -20px para que a cor de funto ficasse até o limite da caixa main. O padding muda em pequenas telas e o padding-bottom foi usado para ajustar o enquadramento do vídeo dentro da caixa e diminuir a borda preta do vídeo em execução. A posição relativa foi para conseguirmos mudar as configurações do vídeo diretamente no iframe*/
+div.video iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+/*Testei as outras opções de position e só a absolute permitiu deixar o vídeo corretamente enquadrado. A largura e a altura foi configurada para 90% da caixa main.O topo e a esquerda foram usadas para deixar o vídeo centralizado corretamente em telas pequenas.*/
+aside{
+    background-color: var(--cor01);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.321);
+    border: 3px solid var(--cor04);
+}
+/*Incluí uma sombra bem discreta, resolvi colocar uma borda e para ajustar o arredondamento da parte superior da caixa, mudei o border-radius de 10px para 12px e ficou perfeito!*/
+aside h3{
+    background-color: var(--cor04);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: normal;
+}
+/*Uei o padding para aumentar o tamnanho da caixa, a margem negativa nas laterais e no topo para igualar com o tamanho da caixa do aside e arrdondamento das bordas superiores.*/
+aside ul{
+    list-style-type: '\2714\00A0\00A0';
+    list-style-position: inside;
+    columns: 2;
+}
+/*Usei o código 2714 do check do emojipedia para estilizar o símbolo da lista. Pra isso, este código precisou ser inserido entre aspas simples e contrabarra. Também foi necessíário incluir o código 00A0 por 2x para distanciá-lo dos textos.*/
+/*Outra coisa importante foi mudar a posição da lista para inside, para que ela ficasse dentro da caixa do aside.*/
+footer{
+    background-color: var(--cor05);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+/*Centralizei o texto, diminuí o tamanho da fonte e aumentei o espaçamento da caixa. */
+footer a{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+/*Tirei o sublinhado, mas deixei os links em negrito.*/
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor01);
+}

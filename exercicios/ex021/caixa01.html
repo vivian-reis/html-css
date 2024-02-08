@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Caixas</title>
+    <style>
+        h1{
+            background-color: lightgray;
+            height: 150px;
+            width: 150px;
+            
+            border: 10px solid darkslategray;
+
+            padding: 10px;
+
+            margin: 20px auto 40px auto;
+
+            outline: 5px dashed salmon;
+        }
+        a{
+            display: block;
+            border-width: 10px;
+            border-style: solid;
+            border-color: red;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de Caixa Box-Level</h1>
+    <p>Parágrafos também são exemplos de box-level, mas os <a href="#">links são exemplos de caixas inline-level</a>. Vamos ver como tudo isso funciona.</p>
+    <h2>O que eu aprendi?</h2>
+    <h3>Short Hands</h3>
+    <ul>
+        <li>Border: largura / estilo / cor. Exemplo: border: 10px solid darkslategray;</li>
+        <li>Padding: topo / direita / baixo / esquerda. Exemplo: padding: 10px 10px 10 px 10 px. E quando as 4 medidas forem iguais, podemos informar somente 1 vez. Exemplo: padding: 10px. E ao colocar 2 medidas, o padding ficará com o topo e a parte de baixo com a primeira medida e os lados com a segunda medida.</li>
+        <li>Margin: também tem as mesmas configurações do Padding. Mas também posso centralizar a margem ao informar "auto" na segunda e quarta posições. Exemplo: margin: 20px auto 40px auto.</li>
+        <li>Outline: largura / estilo / cor. Não é muito usado, mas é importante saber sua ordem de short hand. </li>
+    </ul>
+    <h3>Display</h3>
+    <p>Também aprendi que é possível mudar a característica do display no CSS. Por exemplo, ao colocar display: block no estilo de "a", o link ficará separado do restante do texto.</p>
+    <p>Também temos a opção de display: inline-block, que dará à caixa inline algumas características de uma caixa em bloco.</p>
+</body>
+</html>
