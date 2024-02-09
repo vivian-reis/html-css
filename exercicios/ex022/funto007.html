@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alinhamento Vertical</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container{
+            background-color: purple;
+            position: relative;/*Todo o posicionalmento inicial de um box em html é relativo, por isso, esta propriedade não é necessária.*/
+            height: 200px;
+            height: 100vh;
+            padding: 10px;
+        }
+        #conteudo{
+            position: absolute;/*Ao especificar o posicionamento como absoluto, temos a oportunidade de mudar as propriedades left, top, right e bottom. */
+            height: 200px;
+            width: 400px;
+            background-color: yellow;
+            left: 50%;/*Aqui usamos % para configurar esta propriedade.*/
+            top: 50%;
+            /*As propriedades left e top em 50% centralizaram o canto superior esquerdo.*/
+            transform: translate(-50%, -50%);
+            /*Esta propriedade transformou o centro da caixa no eixo principal. */
+        }
+        /*O margin-auto serve para centralizar o conteúdo na horizontal, mas não serve para a vertical. */
+    </style>
+</head>
+<body>
+    <section id="container">
+        <article id="conteudo">
+
+        </article>
+    </section>
+</body>
+</html>
