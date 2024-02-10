@@ -12,7 +12,7 @@
     --fonte3: 'Sriracha', cursive;
 }
 html, body{
-    min-height:  100vh;
+    min-height:  100vh; /*Também poderia ser 100%.*/
     background-color: darkgray;
     font-family: var(--fonte1);
 }
@@ -38,23 +38,40 @@ a:hover{
 section{
     padding-top: 10vh;
     padding-bottom: 10vh;
+    /*O padding em 10vh foi necessário para criar o efeito parallax nas imagens. E se ajusta ao tamanho da tela.*/
     line-height: 2em;
     padding-left: 30px;
     font-family: var(--fonte3);
     font-size: 3.5vw;
+}
+p{
+    padding-bottom: 2em; /*Para criar o espaço entre os parágrafos.*/
 }
 .normal{
     background-color: white;
     color: black;
 }
 .imagem{
-    background-color: rgb(91, 88, 88);
+    background-color: rgba(56, 52, 52, 0.555);
     color: white;
+    box-shadow: inset 6px 6px 13px 0px black;
+    /*Sombra interna nas imagens.*/
+    background-position: right center;
+    background-size: cover;
+    background-attachment: fixed;/*Para dar o efeito parallax.*/
+
+}
+#img01{
+    background-image: url(imagens/background001.jpg);
+}
+#img02{
+    background-image: url(imagens/background002.jpg);
 }
 .imagem p{
     display: inline-block; /*A caixa se adequou ao tamanho do conteúdo*/
-    padding: 5px;
-    background-color: rgb(65, 64, 64);
+    padding: 10px;
+    background-color: rgba(65, 64, 64, 0.371);
+    text-shadow: 1px 1px 0px black;
 }
 footer{
     background-color: black;
