@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança</title>
+</head>
+<body>
+    <h1>Testando a Segurança de um Iframe</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed cum fuga hic, iusto incidunt assumenda harum, ipsum aliquam sit laboriosam pariatur? Quibusdam alias accusamus distinctio, laboriosam numquam praesentium ratione quisquam?</p>
+    <iframe src="paginas_extras/forms.html" frameborder="1" sandbox="sandbox" referrerpolicy="no-referer"></iframe>
+    <!--
+        O atributo sandbox com o parâmetro sandbox bloqueia o envio de dados dentro do iframe.
+        Já o referrerpolicy com 'no-referer' faz com que o que os dados dentro do iframe não sejam coletados.
+    -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quae necessitatibus odio consectetur officia? Eveniet quia ipsum laborum beatae quis voluptate, debitis animi, ipsam ullam quaerat nesciunt delectus! Aspernatur, accusantium!</p>
+
+    <iframe src="paginas_extras/forms.html" frameborder="1" sandbox="allow-same-origin allow-forms allow-scripts"></iframe>
+    <!--
+        Já o sandbox com estas 3 configurações permite uso de mesma origem, uso de formulários e de scripts. Mas é necessário ter cuidado!
+    -->
+</body>
+</html>
