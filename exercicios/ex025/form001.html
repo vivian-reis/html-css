@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários com Input</title>
+</head>
+<body>
+    <h1>Primeiro Formulário</h1>
+    <!--
+        A visualização dos campos dos formulários dependerá do navegador do usuário, mas isso poderá ser melhor trabalhado no javascript.
+    -->
+    <form action="" method="post">
+        <!--
+            O método padrão é o get, onde os dados do formulário aparecem na url. Já no método post, estas informações não aparecem na url, mas podem ser encontrados no Devtools em network > headers > no arquivo informado em 'action'.
+            Para proteger os dados de fato, será necessário usar o https (futuramente).
+            O método get deve ser usado para dados que não forem sensíveis, como uma busca no Google com até 3k bits. Já o post deve ser usado para dados sensíveis, como senhas, fotos, arquivos e com mais de 3k bits.--> 
+        <p>
+            <label for="inome">Nome</label>
+            <input type="text" name="nome" id="inome" required minlength="5" autocomplete="given-name">
+            <!--
+                minlength determina a quantidade mínima de caracteres.
+                autocomplete="given-name" para completar com o primeiro nome.
+            -->
+        </p>
+
+        <p>
+            <label for="isobrenome">Sobrenome</label>
+            <input type="text" name="sobrenome" id="isobrenome" required  autocomplete="cc-family-name">
+            <!--
+                autocomplete="cc-family-name" para completar com meu sobrenome.
+            -->
+        </p>
+
+        <p>
+            <label for="isenha">Senha</label>
+            <input type="password" name="senha" id="isenha" required minlength="8" maxlength="16" placeholder="Mínimo 8 caracteres" size="14" autocomplete="new-password">
+            <!--
+                size="14" para deixar a caixa com o tamanho de 14 caracteres.
+                Aqui o autocomplete pode ser com a senha atual (current-password) ou uma nova senha (new-password).
+            -->
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+
+    </form>
+
+    <h1>Segundo Formulário</h1>
+
+    <form action="" method="get">
+
+        <p>
+            <label for="inome">Nome</label>
+            <input type="text" name="nome" id="inome" required maxlength="30" placeholder="Seu nome completo" autocomplete="name">
+        </p>
+
+        <p>
+            <label for="imedia">Média</label>
+            <input type="number" name="media" id="imedia" min="0" max="10" placeholder="0 a 10" step="0.1" required>
+            <!--
+                O Step em 0.1 foi necessário para permitir que o campo aceite números decimais de 0 a 10.
+            -->
+        </p>
+
+        <p>
+            <label for="imes">Período Letivo</label>
+            <input type="month" name="mes" id="imes" value="2024-02">
+            <!--
+                Preenchi manualmente o value com 2024-02 para aparecer o mês e ano no campo, mas isso deve ser feito pelo javascript.
+            -->
+        </p>
+
+        <p>
+            <label for="idia">Dia da Prova</label>
+            <input type="date" name="dia" id="idia" value="2024-02-01">
+        </p>
+
+        <p>
+            <label for="ihora">Horário da Prova</label>
+            <input type="time" name="hora" id="ihora">
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+
+    <h1>Terceiro Formulário</h1>
+
+    <form action="" method="post">
+
+        <fieldset>
+            <!--
+                O fieldset cria um campo ao redor do formulário.
+            -->
+            <legend>Dados Pessoais</legend>
+            
+            <p>
+                <label for="inome">Nome</label>
+                <input type="text" name="nome" id="inome" required maxlength="30" placeholder="Seu nome completo" autocomplete="name">
+            </p>
+
+            <p>
+                <label for="iemail">E-mail</label>
+                <input type="email" name="email" id="iemail" autocomplete="email" required>
+            </p>
+            <p>
+                <label for="itel">Telefone</label>
+                <input type="tel" name="tel" id="itel" autocomplete="tel" required pattern="^\(\d{2}\)\d{5}-\d{4}$" placeholder="(xx)xxxxx-xxxx">
+            </p>
+        </fieldset>
+        <!--
+            Usei o pattern para formatar o campo telefone. Por isso é importante estudar sobre RegEx (expressões regulares)!
+        -->
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+    <h1>Quarto Formulário</h1>
+    <form action="">
+
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" name="sexo" id="ifem" value="F"><label for="ifem">Feminino</label><br>
+            <input type="radio" name="sexo" id="imas" value="M" checked><label for="imas">Masculino</label>
+        </fieldset>
+        <!--
+            O radio é para seleção de somente 1 opção pelo usuário e todas as opções precisam ter o mesmo 'name'.
+            O for do label corresponderá ao id do input.
+            A opção checked marcará a opção inicial para o usuário.
+            E foi incluído o value para que aparecesse a opção selecionada na URL.
+        -->
+        <fieldset>
+
+            <legend>Esportes Favoritos</legend>
+            <input type="checkbox" name="basq" id="ibasq"><label for="ibasq">Basquete</label> <br>
+            <input type="checkbox" name="fut" id="ifut"><label for="ifut">Futebol</label> <br>
+            <input type="checkbox" name="nat" id="inat"><label for="inat">Natação</label> <br>
+            <input type="checkbox" name="tenis" id="itenis"><label for="itenis">Tênis</label>
+
+        </fieldset>
+        <!--
+            O checkbox permite o usuário selecionar mais de uma das opções.
+            Precisa ser incluída a tag label para relacionar com o input.
+        -->
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+
+    </form>
+
+    <h1>Quinto Formulário</h1>
+
+    <form action="" method="post">
+        <p>
+            <label for="icor">Cor:</label>
+            <input type="color" name="cor" id="icor" value="#00ff00">
+        </p>
+        <!--
+            A cor padrão inicial será sempre preta, mas pode ser alteraeda pelo parâmetro value.
+        -->
+        <p>
+            <label for="isat">Nível de Satisfação:</label>
+            <input type="range" name="sat" id="isat" min="1" max="5" value="2">
+        </p>
+        <!--
+            A contagem inicial será de 1 a 100, mas pode ser modificada pelos parâmetros min e max. Já o value irá determinar onde se iniciará a contagem na barra.
+        -->
+        <p>
+            <label for="ifoto">Foto do Perfil:</label>
+            <input type="file" name="foto" id="ifoto">
+        </p>
+        <!--
+            O input tipo arquivo precisa ter o method post!
+        -->
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
