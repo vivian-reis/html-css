@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fomulários</title>
+</head>
+<body>
+    <h1>Primeiro Formulário</h1>
+    <form action="" method="post">
+        <p>
+            <label for="iest">Estado:</label>
+            <select name="estado" id="iest">
+
+                <option value="" selected>-----Escolha-----</option>
+                <optgroup label="Sudeste">
+                    <option value="MG">Minas Gerais</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP">São Paulo</option>
+                </optgroup>
+                <!--
+                    O label dentro de optgroup aparecerá na listagem, mas não poderá ser selecionado.
+                    A opção selected mostrará a primeira opção da listagem para o usuário.
+                -->
+                <optgroup label="Nordeste">
+                    <option value="MA">Maranhão</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                </optgroup>
+
+        </select>
+        </p>
+
+        <p>
+            <label for="iprof">Profissão:</label>
+            <input type="text" name="prof" id="iprof" list="lista">
+            <datalist id="lista">
+                <option>Administrador</option>
+                <option>Contador</option>
+                <option>Desenvolvedor</option>
+                <option>Professor</option>
+            </datalist>
+            <!--
+                A opção datalist também terá uma lista suspensa, mas permitirá ao usuário digitar outra opção que não está na lista. Diferente do select.
+                Aqui, a opção a mais do usuário aparecerá futuramente na listagem.
+                Para funcionar corretamente, o value deve ser apagado ou determinado entre "".
+            -->
+        </p>
+
+        <p>
+            <label for="imens">Mensagem:</label> <br>
+            <textarea name="mens" id="imens" cols="30" rows="10" placeholder="Sua Mensagem"></textarea>
+        </p>
+        <!--
+            Para usar o textarea, o method precisa ser o post, por não ter limitação de caracteres.
+        -->
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
