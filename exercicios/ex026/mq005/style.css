@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body{
+    background-color: lightgrey;
+}
+
+header{
+    background-color: rgb(148, 148, 148);
+}
+
+h1{
+    padding: 10px;
+    text-align: center;
+}
+
+#menu{
+    background-color: rgb(48, 48, 48);
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#menu:hover{
+    background-color: white;
+    color: black;
+}
+
+menu{
+    display: none; /*Para ocultar as opções do menu.*/
+}
+
+menu ul{
+    list-style-type: none; /*Para retirar o símbolo dos ítens da lista*/
+}
+
+menu a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(87, 87, 87);
+    color: white;
+    border-top: 2px solid gray;
+}
+/*Foi necessário colocar os ítens do menu em lista por começarmos a configurar pelo mobile. Por isso, foi necessário colocar os links com o display block.*/
+
+menu a:hover{
+    background-color: gray;
+}
+
+main{
+    width: 90%;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+h2{
+    padding: 20px;
+}
+
+p{
+    text-align: justify;
+    margin-bottom: 20px;
+    text-indent: 20px;
+}
