@@ -18,6 +18,12 @@ Grandes telas: acima de 1200px
         background-image: url(../imagens/back-print.jpg); /*desnecessário*/
     }
 
+    #phone{ display: none;}
+    #tablet{ display: none;}
+    #print{ display: block;}
+    #pc{ display: none;}
+    #tv{ display: none;}
+    
     main{
         width: 90%;
         border:  2px solid black;
