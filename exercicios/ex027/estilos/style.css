@@ -24,7 +24,7 @@ vermelho: #F24405
 }
 
 html, body{
-    background-image: linear-gradient(to top, var(--cor1), var(--cor2));
+    background-color: var(--cor2);
     height: 100%;
     width: 100%;
     position: relative;
