@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+header{
+    background-color: #1d1e20;
+    display: flex; /*Para colocar os itens um do lado do outro.*/
+    flex-wrap: wrap; /*Isso é para ajustar em telas pequenas, fazendo com que o menu fique abaixo do logo.*/
+    justify-content: space-between; /*Para dar espaço entre os ítens. No space-around é criado um espaço antes e depois dos ítens. Por isso foi usado o space-between.*/
+    align-items: center; /*Para centralizar o logo verticalmente.*/
+    padding: 20px;
+}
+
+header a{
+    color: white;
+}
+
+.menu{
+    display: flex; /*Para ajustar os itens da lista um ao lado do outro.*/
+}
+
+.menu li a{
+    display: block; /*Percebi direfença na altura do header.*/
+    padding: 10px;
+    margin-left: 10px;
+}
+
+h1{
+    text-align: center;
+    margin-top: 100px;
+}
+
+img{
+    display: block;
+    max-width: 100%; /*Para deixar as imagens responsivas.*/
+    
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*Maneiras de preencher este campo:
+    1fr 1fr 1fr (1fr é unidade fracional, dividios em 3 colunas).
+    Ou repeat(3, 1fr), onde o 3 siginfica a quantidade de repetições da unidade.*/
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
+
+.grid > article:nth-child(n + 4){
+/*A opção nth-child() me permite selecionar quais divs serão estilizadas.
+Colocando n + um número entre parênteses, serão selecionadas as divs a partir deste número.*/
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*Para posicionar a legenda ao lado da imagem*/
+    grid-gap: 10px; /*Espaçamento vertical entre cada artigo.*/
+    align-items: center; /*Para centralizar verticalmente a legenda.*/
+
+    background-color: blue;
+}
+
+#anuncio{
+    grid-column: 1; /*Para posicionar na primeira coluna.*/
+    grid-row: 2/5; /*Para ocupar as linha de 2 a 5. As linhas acima e abaixo do layout também precisam ser contabilizadas.*/
+    display: block; /*Para ajustar o tamanho da imagem.*/
+}
+
+@media screen and (max-width: 600px) {
+    .grid{
+        grid-template-columns: repeat(2, 1fr); /*Mudança na quantidade de colunas de 3 para 2.*/
+        
+    }
+    
+    .grid > article:nth-child(n + 4){
+        display: block; /*Para deixar todas os artigos com as mesmas dimensões, pois o que foi determinado no article:nth-child são propriedades do distplay grid.*/
+}
+    #anuncio{
+        grid-column: auto;
+        grid-row: auto;
+        /*Para resetar o posicionamento da coluna e das linhas determinadas anteriormente. */
+        order: -1; /*Para colocar o anúncio no primeiro ítem.*/
+    }
+
+}

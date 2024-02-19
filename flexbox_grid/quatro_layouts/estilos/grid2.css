@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+header{
+    background-color: #1d1e20;
+    display: flex; /*Para colocar os itens um do lado do outro.*/
+    flex-wrap: wrap; /*Isso é para ajustar em telas pequenas, fazendo com que o menu fique abaixo do logo.*/
+    justify-content: space-between; /*Para dar espaço entre os ítens. No space-around é criado um espaço antes e depois dos ítens. Por isso foi usado o space-between.*/
+    align-items: center; /*Para centralizar o logo verticalmente.*/
+    padding: 20px;
+}
+
+header a{
+    color: white;
+}
+
+.menu{
+    display: flex; /*Para ajustar os itens da lista um ao lado do outro.*/
+}
+
+.menu li a{
+    display: block; /*Percebi direfença na altura do header.*/
+    padding: 10px;
+    margin-left: 10px;
+}
+
+h1{
+    text-align: center;
+    margin-top: 100px;
+}
+
+img{
+    /*display: block;*/
+    max-width: 100%; /*Para deixar as imagens responsivas.*/
+    
+}
+/*As propriedades determinadas em img são essenciais para que o .grid funcione corretamente!*/
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 200px; /*Para determinar que a imagem maior seja responsiva, mas as imagens laterais permaneçam com 200px.*/
+    grid-gap: 20px;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px; /*Espaçamento necessário em telas menores.*/
+}
+
+@media screen and (max-width: 600px) {
+    .grid{        
+        grid-template-columns: 1fr;
+    }
+    
+    .lateral{
+        display: flex; /*Para alinhar as imagens laterais lado a lado.*/
+        overflow: scroll; /*Para ter a rolagem lateral*/
+    }
+
+    .lateral > article{
+        flex: 1 0 200px; /*Preciso entender essa shorthand!*/
+        margin: 0 10px;
+    }
+}
