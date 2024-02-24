@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-Basis</title>
+    <link rel="stylesheet" href="estilos/basis.css">
+</head>
+<body>
+    <h1>flex-basis: auto;</h1>
+    <p>O flex-basis auto é o padrão. O que mudou foi o flex-grow determinado em cada ítem.</p>
+    <p>Nos itens 1 e 2, foi usado o grow 1.</p>
+    <p>No item 3, o que mudou foi o flex-grow em 2.</p>
+    <p>Já no item 4, além do grow 1, foi determinado um width em 60px. Ou seja o grow1 foi adicionado após o width determinado.</p>
+    <p>E no quinto ítem, está com o grow em zero, que é o padrão, junto com o basis auto.</p>
+<section class="container">
+	<div class="item basis-auto">Palavra 1</div>
+	<div class="item basis-auto">2</div>
+	<div class="item basis-auto-grow-2">3</div>
+	<div class="item basis-auto-width">4</div>
+	<div class="item basis-auto-grow-0">5</div>
+</section>
+
+<section class="container overlay">
+	<div class="item basis-auto">Palavra 1</div>
+	<div class="item basis-auto">2</div>
+	<div class="item basis-auto-grow-2">3</div>
+	<div class="item basis-auto-width">4</div>
+	<div class="item basis-auto-grow-0">5</div>
+</section>
+
+<h1>flex-basis: 0;</h1>
+
+<p>O 0 é um dos valores mais utilizados para flex-basis e no atalho 'flex 1', automaticamente é determinado o basis como zero.</p>
+<p>No basis em zero, todos os ítens terão os tamanhos iguais, independente do conteúdo. </p>
+<p>Nos 2 primeiros itens foi usado o grow 1.</p>
+<p>No item 3 (palavra) foi usado grow 2.</p>
+<p>O quarto item possui width de 120px, mas foi ignorado pelo basis zero. Porém ele respeitará o min-width que for determinado.</p>
+<p>E o quinto item não tem grow determinado, ou seja está com o padrão que é zero.</p>
+<section class="container">
+	<div class="item basis-0">Test de Cont</div>
+	<div class="item basis-0">2</div>
+	<div class="item basis-0-grow-2">Palavra</div>
+	<div class="item basis-0-width">4</div>
+	<div class="item basis-0-grow-0">5</div>
+</section>
+
+<section class="container overlay">
+	<div class="item basis-0">Test de Cont</div>
+	<div class="item basis-0">2</div>
+	<div class="item basis-0-grow-2">Palavra</div>
+	<div class="item basis-0-width">4</div>
+	<div class="item basis-0-grow-0">5</div>
+</section>
+
+<h1>flex-basis: número;</h1>
+
+<p>Aqui o flex-basis foi determinado com 110px.</p>
+<p>Foi adicionado o flex-wrap para que a largura do container fosse respeitada.</p>
+<p>O flex-basis dos 3 primeiros itens foi determiado em 110px. Porém como o conteúdo do terceiro item é maior, este valor foi ignorado. Isso porque o valor de 110px é a base, mas o conteúdo sempre será respeitado.</p>
+<p>O quarto item possui o basis em 300px e ele funcionará como o max-width, porque acompanha o tamanho do container. Ou seja, a largura se ajustará ao tamanho da tela.</p>
+<p>Já os ultimos 4 itens estão com um cálculo em porcentagem: calc(25% -10px).</p>
+<section class="container basis-numero-container">
+	<div class="item basis-110">1</div>
+	<div class="item basis-110">12</div>
+	<div class="item basis-110">12345678910</div>
+	<div class="item basis-300">1234</div>
+	<div class="item basis-110-porcento">1</div>
+	<div class="item basis-110-porcento">12</div>
+	<div class="item basis-110-porcento">123</div>
+	<div class="item basis-110-porcento">1234</div>
+</section>
+
+<h1>flex-basis: número; // Diferente Conteúdo</h1>
+<p>Aqui o basis foi determinado em 110px para os 3 elementos. Mas cada item possui um tamanho diferente. Com isso, o segundo item, por ter um conteúdo maior que 110px, possui um tamanho maior.</p>
+<p>Outro ponto importante é que não foi determinado o grow, por isso, está em zero. Se for colocado em 1, cada item irá se ajustar ao tamanho total do container.</p>
+<section class="container basis-numero-container">
+	<div class="item basis-110">Conteúdo Grande</div>
+	<div class="item basis-110">PalavraMaior</div>
+	<div class="item basis-110">Oi</div>
+</section>
+
+<h1>flex-basis: número; // grow 1</h1>
+<p>Os 4 primeiros itens estão com o grow 1 e o basis em 110px.</p>
+<p>Por isso, o quarto item foi deslocado para a linha de baixo e ocupou todo o espaço.</p>
+<p>Já o último item tem o basis em 600px, mas possui o mesmo tamanho do quarto ítem, porque ele precisa respeitar o tamanho do container.</p>
+<section class="container basis-numero-container">
+	<div class="item basis-110-grow-1">1</div>
+	<div class="item basis-110-grow-1">12</div>
+	<div class="item basis-110-grow-1">1234</div>
+	<div class="item basis-110-grow-1">12345</div>
+	<div class="item basis-600-grow-1">5</div>
+</section>
+</body>
+</html>
