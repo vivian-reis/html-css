@@ -1,0 +1,381 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    color: #222222;
+    list-style: none;
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    max-width: 100%; /*Para deixar as imagens responsivas*/
+}
+
+.superinfo-bg{
+    background-color: #122ab2;
+}
+
+.superinfo p, a, address{
+    color: white;
+    margin: 0 10px 10px 10px;
+}
+
+.superinfo{
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    color: white;
+}
+
+.menu-bg{
+    background-color: #2c70ff;
+}
+
+.menu{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px 0;
+    display: flex; /*Para colocar os itens um do lado do outro*/
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /*Alinhamento vertical*/
+}
+
+.menu-logo{
+    font-size: 2.25em;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.menu-nav ul{
+    display: flex; /*Para colocar os itens da lista um ao lado do outro. */
+    flex-wrap: wrap;
+}
+
+.menu-nav a{
+    font-size: 1.25em;
+    display: block; /*Por padrão os links são display inline e foi usado o block para influenciarmos no padding, mas só percebi uma leve diferença do padding-bottom*/
+    padding: 10px;
+}
+
+.menu-nav a:hover{
+    color: #122ab2;
+}
+
+.introducao{
+    font-size: 3em; /*Geralmente quando se aumenta muito o tamanho da fonte, diminui-se o espaçamento entre as linhas com o line-height.*/
+    line-height: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 10px;
+}
+
+.sobre{
+    border-top: 2px solid #2c70ff;
+    border-bottom: 2px solid #2c70ff;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 0;
+    display: flex; /*Para colocar o texto e as 2 imagens lado a lado.*/
+    flex-wrap: wrap; /*Para que as imagens sejam deslocadas para baixo ao diminuir o tamanho da tela.*/
+}
+
+.sobre-info{
+    flex: 2 1 300px; 
+    /*Flex 2 para ocupar 2x o espaço das imagens.
+    Shrink 1
+    Determinar o basis em 300px é importante para que as imagens não dimunuam muito de tamanho antes de serem lançadas na linha de baixo.
+    */
+    margin: 0 10px;
+}
+
+.sobre-info h1{
+    font-size: 3em;
+    margin-bottom: .5em;
+}
+
+.sobre-info p{
+    font-size: 1.25em;
+    line-height: 1.4;
+    margin-bottom: 1em;
+    color: #7c7c7c;
+}
+
+.sobre-img{
+    flex: 1 1 160px;
+    /*Basis em 160px foi importante para que as imagens não diminuam muito de tamanho ao diminuir a tela.*/
+    margin: 0 10px;
+}
+
+.produtos{
+    max-width: 960px;
+    margin: 60px auto;
+}
+
+.produtos h1{
+    font-size: 3em;
+    margin: 0 10px 60px 10px;
+}
+
+.produtos-container{
+    display: flex; /*Para colocar os 3 ítens em linha.*/
+    flex-wrap: wrap;
+    align-items: flex-end; /*Para alinhar os itens pela base e como as imagens possuem alturas diferentes, permitiu ter este efeito na página.*/
+}
+
+.produtos-item{
+    flex: 1 1 175px;
+    /*Flex 1 para permitir que as imagens diminuam e se ajustem ao tamanho da tela e o basis em 175px funciona como o min-width.*/
+    margin: 10px;
+}
+
+.produtos-item h2{
+    font-size: 3em;
+    color: #a4a4a4;
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+}
+
+.purple{
+    border-top: 8px solid #ae81ff;
+}
+
+.pink{
+    border-top: 8px solid #f9265e;
+}
+
+.blue{
+    border-top: 8px solid #66d9eb;
+}
+
+.preco{
+    background-color: #f7f7f7;
+    padding: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.preco-item{
+    flex: 1 1 260px;
+    /*O basis em 260px funciona como o min width e é importante para que o site funcione em outros navegadores como o Safari. Além disso, o tamanho de 260px é relativo aos smartphones.*/
+    border: 4px solid white ;
+    padding: 20px;
+    margin: 10px;
+}
+
+.preco-item h2{
+    font-size: 3em;
+    color: #a4a4a4;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.preco-item span{
+    max-width: 300px;
+    margin: 20px auto;
+    display: block; /*Os parâmetros anteriores (max-width e margin) só mudaram depois do display block.*/
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0px 5px 0px;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+}
+
+.preco-item sup{
+    font-size:  1.5rem; /*rem é "relativo a raiz (tag pai: span).*/
+}
+
+.preco-item ul{
+    max-width: 300px;
+    margin: 20px auto;
+    font-size: 1.25em;
+    font-style: italic;
+}
+
+.preco-item li{
+    color: #7c7c7c;
+    display: flex; /*Necessário para alinhar o marcador ao texto.*/
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 15px;
+    /*justify-content e align-items usados para alinhar o marcador ao texto.*/
+}
+
+/*.preco-item li::after foi usado para criar o marcador após o texto.*/
+.preco-item li::after{
+    content: ''; /*conteúdo vazio*/
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #2c70ff;
+    border-radius: 50%; /*Para arredondar.*/
+}
+
+.preco-item a{ /*botão comprar*/
+    max-width: 300px;
+    display: block; /*Para pegar todo o espaço do container.*/
+    margin: 20px auto;
+    border: 4px solid;
+    color: #222222;
+    text-transform: uppercase; /*Para colocar todas as letras maiúsculas*/
+    font-size: 2.25em;
+    font-weight: bold;
+    padding: 15px 0;
+    text-align: center;
+}
+
+@media (max-width: 800px){
+    .preco{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /*As propriedades abaixo foram usadas para mudar a ordem de apresetação dos preços em telas menores que 800px.
+    O terceiro item foi colocado em primeiro lugar e foi mudada a ordem do segundo item para mantê-lo no centro.*/
+    .preco-item:nth-child(3){
+        order: -2;
+    }
+    .preco-item:nth-child(2){
+        order: -1;
+    }
+}
+
+.qualidade{
+    max-width: 960px;
+    margin: 60px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.qualidade-item{
+    flex: 1 1 300px;
+    /*Como o layout tem 960px, foi usado 300px no basis porque precisamos considerar a margem e o espaçamento. Isso porque a intenção foi ter 3 item em cada linha.
+    Assim como o basis zero não funciona no Safari, o calc não funciona no Explore. Por isso, o melhor é determinar o tamanho em px.*/
+    margin: 20px 10px;
+}
+
+.qualidade-item h2{
+    font-size: 2.25em;
+    color: #a4a4a4;
+    margin-bottom: 20px;
+}
+
+/*O parâmetro abaixo foi usado para criar o bastão ao lado dos títulos.*/
+
+.qualidade-item h2::before{
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/*As propriedades abaixo foram usadas para determinarmos os ítens e as cores escolhidas. "3n+1", significa que o primeiro e o quarto itens (3+1) foram escolhidos, assim como 3n + 2 = segundo item e o quinto item e assim por diante.*/
+
+.qualidade-item:nth-of-type(3n + 1) h2::before{
+    background-color: #ae81ff;
+}
+
+.qualidade-item:nth-of-type(3n + 2) h2::before{
+    background-color: #f9265e;
+}
+
+.qualidade-item:nth-of-type(3n + 3) h2::before{
+    background-color: #66d9eb;
+}
+
+.qualidade-item p{
+    font-size: 1.25em;
+    line-height: 1.4;
+    color: #7c7c7c;
+}
+
+.newsletter{
+    background-color: #f7f7f7;
+    padding: 60px calc((100% - 960px)/2);
+    /*O calc foi usado para evitar que o conteúdo diminuísse com o tamanho da tela. Neste caso, tiramos 960px de 100% da largura e dividimos por 2, para ficar igual dos 2 lados.*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.newsletter-info{
+    flex: 1 1 260px;
+    margin: 0 10px;
+}
+
+.newsletter-info h1{
+    font-size: 3em;
+    color: #a4a4a4;
+}
+
+.newsletter-info p{
+    font-size: 1.25em;
+    font-style: italic;
+    max-width: 230px;
+    color: #7c7c7c;
+    margin-bottom: 10px;
+}
+
+.newsletter-form{
+    flex: 2 1 260px;
+    margin: 0 10px;
+    align-self: center; /*Alinhou o formulário verticalmente ao centro.*/
+    display: flex; /*Determinado o display flex para configurar cada parte do fomulário (input e button) separadamente.*/
+    flex-wrap: wrap;
+}
+
+.newsletter-form input{
+    flex: 3 1 200px;
+    font-size: 1.25em;
+    color: #7c7c7c;
+    font-style: italic;
+    border: 4px solid #2c70ff;
+    background: transparent;
+    padding: 15px 10px;
+    margin: 0px;
+    border-radius: 0px;
+}
+
+.newsletter-form button{
+    flex: 1 1 260px;
+    font-size: 2.25em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #2c70ff;
+    color: white;
+    cursor: pointer;
+    border: 0px;
+    padding: 15px 10px;
+    margin: 0px;
+}
+
+/*Para diminuir o tamanho da fonte do botão em telas a partir de 600px*/
+@media (max-width: 600px) {
+    .newsletter-form button{
+        font-size: 1.5em;
+    }
+}
+
+footer{
+    display: flex;
+    background-color: #2c70ff;
+    height: 200px;
+    align-items: center;
+}
+
+footer p{
+    flex: 1;
+    text-align: center;
+    font-size: 2.25em;
+    color: #122ab2;
+}
