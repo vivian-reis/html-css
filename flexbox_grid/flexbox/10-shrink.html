@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>flex-shrink: 1;</h1>
+	<p>O valor padrão esta propriedade é 1, que permite que os itens tenham seus tamanhos reduzidos para caberem no container.</p>
+	<p>Neste exemplo temos tanto o grow, quanto o shrink em 1.</p>
 <section class="container">
 	<div class="item shrink-1">1</div>
 	<div class="item shrink-1">2</div>
@@ -35,6 +37,8 @@
 <p>Foi possível perceber que o shrink em 1 ou 3 não fez diferença nos exemplos anteriores. Isso porque o conteúdo de cada div cabe perfeitamente dentro do container. </p>
 
 <h1>flex-shrink: 1; // Conteúdo maior que o container</h1>
+<p>Ao mudar o shrink para 0, a div perde a quebra de página e todos os conteúdos ficam na mesma linha.</p>
+<p>Isso porque o shrink em zero, não tenta diminuir o tamanho do conteúdo para caber no container.</p>
 <section class="container">
 	<div class="item shrink-1">TesteTesteTesteTeste</div>
 	<div class="item shrink-1">TesteTesteTeste 2</div>
@@ -43,6 +47,7 @@
 </section>
 
 <h1>flex-shrink: misturado; // Conteúdo maior que o container</h1>
+<p>Os 2 primeiros item tem o shrink em 1 e os outros dois com o shrink em 3. Mas devido a falta de tamanho do container, não fez diferença.</p>
 <section class="container">
 	<div class="item shrink-1">TesteTesteTesteTeste</div>
 	<div class="item shrink-1">TesteTesteTeste 2</div>
@@ -51,6 +56,7 @@
 </section>
 
 <h1>flex-shrink: 1; / flex-basis: valor;</h1>
+<p>Aqui temos o shrink em 1 e o basis em 150px, mas foi possível verificar que o basis não mudou nada, pois o conteúdo é maior que o container.</p>
 <section class="container">
 	<div class="item shrink-1-basis">TesteTesteTesteTeste</div>
 	<div class="item shrink-1-basis">TesteTesteTeste 2</div>
@@ -59,6 +65,7 @@
 </section>
 
 <h1>flex-shrink: 0; / flex-basis: valor;</h1>
+<p>Aqui o container já estourou, mas como o shrink está em zero, e o basis em 150px, as divs ficaram com o mesmo tamanho, independente do conteúdo.</p>
 <section class="container">
 	<div class="item shrink-0-basis">TesteTesteTesteTeste</div>
 	<div class="item shrink-0-basis">TesteTesteTeste 2</div>
@@ -67,6 +74,7 @@
 </section>
 
 <h1>flex-shrink: 0; / flex-basis: valor; / wrap</h1>
+<p>Aqui, como temos o wrap, os conteúdos foram distribuídos em 2 linhas.</p>
 <section class="container flex-wrap">
 	<div class="item shrink-0-basis">TesteTesteTesteTeste</div>
 	<div class="item shrink-0-basis">TesteTesteTeste 2</div>
@@ -75,6 +83,8 @@
 </section>
 
 <h1>flex-shrink: misturado; / flex-basis: valor;</h1>
+<p>Os 2 primeiros itens estão com srhik igual a 1 e os outros 2 com shrink 3.</p>
+<p>Neste exemplo é possível verificar que o número do shrink influencia no tamanho do ítem. Quando maior o tamanho, menor será o espaço da div.</p>
 <section class="container">
 	<div class="item shrink-1-basis">1</div>
 	<div class="item shrink-1-basis">Teste 2</div>
@@ -83,6 +93,8 @@
 </section>
 
 <h1>flex-shrink: misturado; / flex-basis: valor; / wrap</h1>
+<p>A diferença deste exemplo para o anterior foi a inclusão o wrap.</p>
+<p>E geralmente o shrink irá incluenciar quando o basis tiver um tamanho definido.</p>
 <section class="container flex-wrap">
 	<div class="item shrink-1-basis">1</div>
 	<div class="item shrink-1-basis">Teste 2</div>
