@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="estilos/grid.css">
+</head>
+<body>
+    <div>
+        <h1>grid: 100px / 1fr 1fr;</h1>
+        <pre>
+            .grid {
+                display: grid;
+            }
+                        .grid-1 {
+                grid: 100px / 1fr 1fr;
+            }
+        </pre>
+        <p>Definição: linha / coluna.</p>
+        <p>Neste exemplo a primeira linha está com 100px de altura e com 2 colunas.</p>
+        <section class="grid grid-1">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid: 100px / auto-flow 100px 50px;</h1>
+        <pre>
+            .grid-2 {
+                grid: 100px / auto-flow 100px 50px;
+            }
+        </pre>
+        <p>Neste exemplo a linha está com 100px de altura, o auto-flow após a / (ou seja, no lugar da coluna) determina que os ítens sejam divididos por colunas e não por linhas (=grid-auto-flow: columns). E além disso essa propriedade determina que o que foi especificado depois, funcione como o auto-columns. Neste exemplo as colunas foram divididas em 100px e 50px.</p>
+        <section class="grid grid-2">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid diversos valores</h1>
+        <pre>
+            .grid-3 {
+                grid:
+                    "logo nav nav" 50px 
+                    "sidenav content advert" 150px 
+                    "sidenav footer footer" 100px 
+                / 100px 1fr 50px;
+            }
+        </pre>
+        <p>Neste exemplo a propriedade grid funcionou como o grid template.</p>
+        <section class="grid grid-3">
+            <div class="item logo">logo</div>
+            <div class="item nav">nav</div>
+            <div class="item content">content</div>
+            <div class="item sidenav">sidenav</div>
+            <div class="item advert">advert</div>
+            <div class="item footer">footer</div>
+        </section>
+        </div>
+</body>
+</html>

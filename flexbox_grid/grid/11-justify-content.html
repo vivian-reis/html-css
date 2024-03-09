@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justify-content</title>
+    <link rel="stylesheet" href="estilos/justify-content.css">
+</head>
+<body>
+    <div>
+        <h1>justify-content: start;</h1>
+        <pre>
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 100px);
+                grid-template-rows: 100px 100px 100px;
+            }
+            .start {
+                justify-content: start;
+            }
+            .item-2, .item-3 {
+                grid-row: span 2;
+            }
+            .item-5 {
+                grid-column: span 2;
+            }
+        </pre>
+        <section class="grid start">
+            <div class="item">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item">4</div>
+            <div class="item item-5">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>justify-content: end;</h1>
+        <pre>
+            .end {
+                justify-content: end;
+            }
+        </pre>
+        <section class="grid end">
+            <div class="item">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item">4</div>
+            <div class="item item-5">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>justify-content: center;</h1>
+        <pre>
+            .center {
+                justify-content: center;
+            }
+        </pre>
+        <section class="grid center">
+            <div class="item">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item">4</div>
+            <div class="item item-5">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>justify-content: stretch;</h1>
+        <pre>
+            .stretch {
+                grid-template-columns: auto;
+                justify-content: stretch;
+            }
+        </pre>
+        <p>Este é o formato padrão do justify-content.</p>
+        <section class="grid stretch">
+            <div class="item">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item">4</div>
+            <div class="item item-5">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>justify-content: space-around;</h1>
+        <pre>
+            .space-around {
+                justify-content: space-around;
+            }            
+        </pre>
+        <p>Não foi aplicado gap, por isso, o espçamento foi feito pelo space-around.</p>
+        <section class="grid space-around">
+            <div class="item">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item">4</div>
+            <div class="item item-5">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>justify-content: space-between;</h1>
+        <pre>
+            .space-between {
+                justify-content: space-between;
+            }            
+        </pre>
+        <section class="grid space-between">
+            <div class="item">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item">4</div>
+            <div class="item item-5">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>justify-content: space-evenly;</h1>
+        <pre>
+            .space-evenly {
+                justify-content: space-evenly;
+            }
+        </pre>
+        <p>Diferente do space-around, o espaço externo tem o mesmo tamanho do interno.</p>
+        <section class="grid space-evenly">
+            <div class="item">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item">4</div>
+            <div class="item item-5">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+</body>
+</html>

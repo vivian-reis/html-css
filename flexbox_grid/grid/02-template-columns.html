@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-template-columns</title>
+    <link rel="stylesheet" href="estilos/template-columns.css">
+</head>
+<body>
+    <div>
+        <h1>grid-template-columns: 100px 100px 100px 100px;</h1>
+        <p>Esta definição irá "ignorar" a margem definida, mas respeitará o min-width dos itens, o que poderá estourar o container.</p>
+        <section class="grid grid-template-columns-1">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: 100px 100px 100px 100px;</h1>
+        <p>Quando o conteúdo for maior que o tamanho estipulado para a coluna, irá estourar o tamanho, conforme neste exemplo. Mas ainda assim, cada coluna terá o tamanho determinado.</p>
+        <section class="grid grid-template-columns-1">
+            <div class="item">PalavraTeste</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">PalavraTeste</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: 1fr 2fr;</h1>
+        <section class="grid grid-template-columns-2">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: 1fr 2fr;</h1>
+        <p>Apesar das colunas serem definidas no mesmo tamanho do exemplo anterior, o tamanho do conteúdo é muito maior e aqui é possível identificar que o tamanho do conteúdo será respdeitado quando as colunas forem definidas com o fr.</p>
+        <section class="grid grid-template-columns-2">
+            <div class="item">PalavraTesteGrandeRespeita</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h1>
+        <p>A propriedade minmax irá determinar o tamanho mínimo e máximo das colunas.</p>
+        <p>Neste exemplo, a primeria coluna tem 200px de tamanho mínimo e 1fr de máximo e diferente do flexbox que podemos a opção wrap para criar uma nova linha, no grid, isso será determinado por media query.</p>
+        <section class="grid grid-template-columns-3">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h1>
+        <p>Aqui temos a mesma definição do exemplo anterior, mas o primeiro item tem tamanho maior que os outros. Com isso, o tamanho da primeira coluna é influenciado pelo tamanho do item.</p>
+        <section class="grid grid-template-columns-3">
+            <div class="item">TestePalavraTeste</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h1>
+        <p>Neste exemplo o item com tamanho maior está na coluna do meio, com 1fr o que fez com que a terceira coluna estourasse o container.</p>
+        <section class="grid grid-template-columns-3">
+            <div class="item">1</div>
+            <div class="item">TestePalavraTeste</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: repeat(3, 1fr);</h1>
+        <p>O repeat cria a quantidade de colunas, repetindo o tamanho delas. Neste exemplo, foram criadas 3 colunas com 1fr cada.</p>
+        <section class="grid grid-template-columns-4">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: repeat(auto-fit, 100px);</h1>
+        <p>A opção auto-fit calcula automaticamente o total de colunas, o que já torna o layout responsivo.</p>
+        <section class="grid grid-template-columns-5">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: repeat(auto-fit, minmax(100px, auto));</h1>
+        <p>A junção do auto-fit para determinar a automaticamente a quantidade de colunas com o minmax para determinar o tamanhho mínimo e máximo de cada uma, faz com que esse layout seja totalmente responsivo.</p>
+        <p>Mas o conteúdo do primeiro item estourou o tamanho da coluna (não foi respeitado).</p>
+        <section class="grid grid-template-columns-6">
+            <div class="item">PalavraTesteMesmo1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: repeat(auto-fill, minmax(100px, auto));</h1>
+        <p>O auto-fill tenta preencher colunas sem considerar o conteúdo. Ou seja, ele pode criar colunas "vazias", diferente do auto-fit que irá criar as colunas de acordo com os conteúdos.</p>
+        <section class="grid grid-template-columns-7">
+            <div class="item">PalavraTesteMesmo1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+</body>
+</html>

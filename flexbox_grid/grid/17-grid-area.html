@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-area</title>
+    <link rel="stylesheet" href="estilos/grid-area.css">
+</head>
+<body>
+    <div>
+        <h1>grid-area: 1 / 2 / 4 / 3;</h1>
+        <pre>
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 50px;
+            }
+            .grid-area-1 .item-1 {
+                grid-area: 1 / 2 / 4 / 3;
+                grid-row-start: 1;
+                grid-column-start: 2;
+                grid-row-end: 4;
+                grid-column-end: 3;
+            }
+            .grid-area-1 .item-5 {
+                grid-area: span 2 / 3;
+                grid-row-start: span 2;
+                grid-column-start: 3;
+            }            
+        </pre>
+        <p>grid-area: 1 / 2 / 4 / 3 para o item 1:</p>
+        <p>grid-area: início da linha linha / início da coluna / final da linha / final da coluna</p>
+        <p>Esta configuração determina que o item 1 comece na primeira linha, na segunda coluna, que termine na linha 4 e na coluna 3. Importante lembrar que as colunas e as linha vão de 1 a 2, de 2 a 3 e de 3 a 4. Sendo 3 linhas e colunas no total.</p>
+        <p>grid-area: span 2 / 3 para o item 5 significa que ele terá 2 linhas e começará na terceira coluna.</p>
+        <section class="grid grid-area-1">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-area: header;</h1>
+        <pre>
+            .grid-area-2 {
+                grid-template-areas:
+                    "header header header"	
+                    "sidenav content ads"	
+                    "sidenav footer footer";
+            }
+            .grid-area-2 .item-1 {
+                grid-area: header;
+            }
+            .grid-area-2 .item-2 {
+                grid-area: sidenav;
+            }
+            .grid-area-2 .item-3 {
+                grid-area: content;
+            }
+            .grid-area-2 .item-4 {
+                grid-area: ads;
+            }
+            .grid-area-2 .item-5 {
+                grid-area: footer;
+            }
+        </pre>
+        <p>Como o ítem 6 não foi definido no grid-template-areas, ele foi adicionado automaticamente abaixo do layout.</p>
+        <section class="grid grid-area-2">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-area</h1>
+        <pre>
+            .grid-area-3 {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            }
+            .grid-area-3 .item-1 {
+                grid-row: 2 / 4;
+                grid-column: 2 / 5;
+                background: rgb(255,0,0);
+                mix-blend-mode: screen;
+            }
+            .grid-area-3 .item-2 {
+                grid-area: 3 / 3 / span 3 / 5;
+                background: rgb(0,255,0);
+                mix-blend-mode: screen;
+            }
+            .grid-area-3 .item-12 {
+                grid-row-start: 1;
+                grid-column-start: 4;
+                grid-row-end: 7;
+                grid-column-end: 6;
+                background: rgb(0,0,255);
+                mix-blend-mode: screen;
+            }            
+        </pre>
+        <p>A propriedade z-index coloca o item à frente dos demais e serve em layouts sobrepostos.</p>
+        <p>A propriedade mix-blend-mode: screen foi usada para "somar" as cores que foram sobrepostas.</p>
+        <section class="grid grid-area-3">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+            <div class="item item-7">7</div>
+            <div class="item item-8">8</div>
+            <div class="item item-9">9</div>
+            <div class="item item-10">10</div>
+            <div class="item item-11">11</div>
+            <div class="item item-12">12</div>
+            <div class="item item-13">13</div>
+            <div class="item item-14">14</div>
+            <div class="item item-15">15</div>
+            <div class="item item-16">16</div>
+            <div class="item item-17">17</div>
+            <div class="item item-18">18</div>
+            <div class="item item-19">19</div>
+            <div class="item item-20">20</div>
+        </section>
+        </div>
+</body>
+</html>

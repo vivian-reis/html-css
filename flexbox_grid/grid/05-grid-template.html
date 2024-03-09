@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-template</title>
+    <link rel="stylesheet" href="estilos/grid-template.css">
+</head>
+<body>
+    <p>O grid template é um atalho para definir as 3 propriedades vistas anteriormente.</p>
+    <div>
+        <h1>grid-template: 50px 1fr / 100px 1fr 100px</h1>
+        <p>Neste exemplo foram especificadas 2 linhas, sendo a primeira com 50px e a segunda com 1fr.</p>
+        <p>Para separar linha de coluna usa-se a /.</p>
+        <p>E foram determinadas 30 colunas sendo: 100px 1fr e 100px.</p>
+        <section class="grid grid-template-1">
+            <div class="item">logo</div>
+            <div class="item">nav</div>
+            <div class="item">content</div>
+            <div class="item">sidenav</div>
+            <div class="item">advert</div>
+            <div class="item">footer</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template (areas, columns e rows)</h1>
+        <pre>
+            grid-template:
+            "logo nav nav" 50px
+            "sidenav content advert" 150px
+            "sidenav footer footer" 100px
+            / 100px 1fr 50px;
+        </pre>
+        <p>Lembrando que sempre será importante determinhar as colunas após a /.</p>
+        <section class="grid grid-template-2">
+            <div class="item logo">logo</div>
+            <div class="item nav">nav</div>
+            <div class="item content">content</div>
+            <div class="item sidenav">sidenav</div>
+            <div class="item advert">advert</div>
+            <div class="item footer">footer</div>
+        </section>
+        </div>
+</body>
+</html>

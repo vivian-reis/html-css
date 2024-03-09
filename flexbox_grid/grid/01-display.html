@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <link rel="stylesheet" href="estilos/display.css">
+</head>
+<body>
+    <div>
+        <h1>display: block;</h1>
+        <section class="grid">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>display: grid;</h1>
+        <p>Aqui está com o display grid, mas por não ser especificada a quantidade de colunas, comporta-se como display block. Ou seja, definir somente o display grid não é o suficiente (diferente do display flex).</p>
+        <section class="grid">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: 200px 200px;</h1>
+        <p>A propriedade grid-template-columns define a quantidade de colunas. Neste exemplo foram especificadas 2 colunas de 200px cada.</p>
+        <section class="container grid grid-template-columns">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: 1fr 2fr 1fr;</h1>
+        <p>A unidade fr relaciona o tamanho de cada coluna. Neste exemplo, foram 3 colunas, sendo que a coluna do meio tem 2x o tamanho das outras 2 colunas. Ou seja, o fr irá influenciar no tamanho de cada coluna separadamente.</p>
+        <section class="container grid grid-template-columns-3">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>subgrid</h1>
+        <p>O subgrid é para definir grid dentro de grid, mas não é suportado por todos os navegadores.</p>
+        <p></p>
+        <section class="container grid grid-template-columns-3">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item subgrid">
+                <div>5.1</div>
+                <div>5.2</div>
+                <div>5.3</div>
+            </div>
+            <div class="item">6</div>
+        </section>
+        </div>
+</body>
+</html>

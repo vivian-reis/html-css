@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justify-self</title>
+    <link rel="stylesheet" href="estilos/justify-self.css">
+<body>
+    <div>
+        <h1>justify-self: start;</h1>
+        <pre>
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 50px);
+            }
+            .start .item-2 {
+                justify-self: start;
+            }
+            .start .item-5 {
+                justify-self: start;
+            }            
+        </pre>
+        <p>O strech é o padrão, que faz com que o item ocupe todo o espaço disponível determinado pela quantidade de linhas e colunas.</p>
+        <p>A propriedade justify-self: start faz com que o item ocupe somente o início deste espaço, conforme neste exemplo.</p>
+        <section class="grid start">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>justify-self: end;</h1>
+        <pre>
+            .end .item-2 {
+                justify-self: end;
+            }
+            .end .item-5 {
+                justify-self: end;
+            }
+        </pre>
+        <p>Neste exemplo é possível verificar que o justify-self irá respeitar o conteúdo do item.</p>
+        <section class="grid end">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">Item 5</div>
+            <div class="item item-6">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>justify-self: center;</h1>
+        <pre>
+            .center .item-2 {
+                justify-self: center;
+            }
+            .center .item-5 {
+                justify-self: center;
+            }            
+        </pre>
+        <section class="grid center">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">Item 5</div>
+            <div class="item item-6">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>justify-self: stretch;</h1>
+        <pre>
+            .stretch {
+                justify-items: start;
+            }
+            .stretch .item-2 {
+                justify-self: stretch;
+            }
+            .stretch .item-5 {
+                justify-self: stretch;
+            }
+            .item-2, .item-3 {
+                grid-row: span 2;
+            }
+            .item-5 {
+                grid-column: span 2;
+            }            
+        </pre>
+        <section class="grid stretch">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">Item 5</div>
+            <div class="item item-6">6</div>
+        </section>
+        </div>
+</body>
+</html>

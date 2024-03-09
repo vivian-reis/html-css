@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-column</title>
+    <link rel="stylesheet" href="estilos/grid-column.css">
+</head>
+<body>
+    <div>
+        <h1>grid-column</h1>
+        <pre>
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 50px;
+            }
+            .grid-column-1 .item-1 {
+                grid-column: 3;
+            }
+            .grid-column-1 .item-3 {
+                grid-column: 1;
+            }
+        </pre>
+        <p>Neste exemplo foi possível perceber que o item 1 foi colocado na terceira coluna e o item 3 na primeira coluna.</p>
+        <section class="grid grid-column-1">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-column span</h1>
+        <pre>
+            .grid-column-2 .item-3 {
+                grid-column: 1 / -1;
+            }
+            .grid-column-2 .item-5 {
+                grid-column: span 2;
+            }
+            .grid-column-2 .item-6 {
+                grid-column: 2 / span 2;
+            }
+        </pre>
+        <p>A especificação 1/ -1 do item 3 significa que o item terá ocupará todo o espaço disponível, idependente da quantidade de colunas.</p>
+        <p>Diferente do item 5, o item 6 além de ter determinado o span em 2x, também foi determinada a coluna de início e por isso, foi gerado um espaçamento na última linha.</p>
+        <section class="grid grid-column-2">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-column-start / grid-column-end</h1>
+        <pre>
+            .grid-column-3 .item-2 {
+                grid-column: 1 / 3;
+            }
+            .grid-column-3 .item-4 {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+            .grid-column-3 .item-1 {
+                grid-column-start: 2;
+                grid-column-end: 4;
+            }
+        </pre>
+        <p>O itens 2 e 4 estão com a mesma especificação, sendo que o item 2 está na forma resumida.</p>
+        <p>Ou seja, grid-column: 1 / 3, significa que grid-column-start: 1 e grid-column-end: 3. </p>
+        <p>Na imagem abaixo do exemplo fica mais claro que as linhas se iniciam em 1 até 2, de 2 até 3, de 3 até 4. Por isso, para ocupar 2 linhas, colocamos o grid-column de 1 a 3.</p>
+        <p>Sendo assim, o item 1 poderia ser escito como grid-column: 2/ 4. </p>
+        <section class="grid grid-column-3">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </section>
+        </div>
+        
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/64626/grid-column.png" alt="Grid Columns" />
+        
+        <div>
+        <h1>[col1-inicio]</h1>
+        <pre>
+            .grid-column-4 {
+                grid-template-columns: [col1-inicio] 1fr [col1-final]  1fr;
+            }
+            .grid-column-4 .item-2 {
+                grid-column: col1-inicio / col1-final;
+            }
+        </pre>
+        <p>Também é possível nomear as colunas na propriedade grid-template-columns e depois usá-los na propriedade grid-column. </p>
+        <section class="grid grid-column-4">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-areas</h1>
+        <pre>
+            .grid-column-5 {
+                grid-template-areas:
+                    "header header header"
+                    "sidenav content ads"
+                    "sidenav footer footer"
+                ;
+            }
+            .grid-column-5 .item-1 {
+                grid-column-start: header;
+                grid-column-end: ads;
+            }
+            .grid-column-5 .item-2 {
+                grid-column-start: sidenav;
+                grid-column-end: sidenav;
+                grid-row-start: sidenav;
+                grid-row-end: sidenav;
+            }
+            .grid-column-5 .item-3 {
+                grid-column: content / content;
+            }
+            .grid-column-5 .item-4 {
+                grid-column-start: ads;
+            }
+            .grid-column-5 .item-5 {
+                grid-column: footer;
+            }
+        </pre>
+        <p>Neste exemplo foi possível verificar que o item 1 se iniciou na primeira coluna, porque o header começa na primeira coluna e terminou na terceira coluna, porque é onde se encontra o ads. Assim como nos demais itens.</p>
+        <section class="grid grid-column-5">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-column normal</h1>
+        <pre>
+            .grid-column-6 .item-1 {
+                grid-column: 1 / -1;
+            }
+            .grid-column-6 .item-2 {
+                grid-column: 1;
+                grid-row: 2 / 4;
+            }
+            .grid-column-6 .item-3 {
+                grid-column: 2;
+            }
+            .grid-column-6 .item-4 {
+                grid-column: 3;
+            }
+            .grid-column-6 .item-5 {
+                grid-column: 2 / -1;
+            }
+        </pre>
+        <p>Temos o mesmo layout do exemplo anterior, mas com o código muito mais simples.</p>
+        <p>Não tem a necessidade de especificar os itens 3 e 4, pois já estão nos seus devidos lugares, com as especificações dos outros itens.</p>
+        <section class="grid grid-column-6">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+        </section>
+        </div>
+</body>
+</html>

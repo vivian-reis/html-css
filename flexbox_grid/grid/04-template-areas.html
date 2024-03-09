@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-template-areas</title>
+    <link rel="stylesheet" href="estilos/template-areas.css">
+</head>
+<body>
+    <div>
+        <h1>grid-template-areas</h1>
+        <p>O grid area irá determinar o local e tamanho para cada grid item. Por isso, eles precisarão ser especificados com classes ou ids, que precisarão ter grid-area determinados no css.</p>
+        <pre>
+            grid-template-areas:
+            "logo nav nav"
+            "sidenav content advert"
+            "sidenav footer footer";
+        </pre>
+        <section class="grid grid-template-areas-1">
+            <div class="item logo">logo</div>
+            <div class="item nav">nav</div>
+            <div class="item content">content</div>
+            <div class="item sidenav">sidenav</div>
+            <div class="item advert">advert</div>
+            <div class="item footer">footer</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-areas</h1>
+        <pre>
+            grid-template-areas:
+            "sidenav logo nav"
+            "sidenav content advert"
+            "sidenav content footer";
+        </pre>
+        <section class="grid grid-template-areas-2">
+            <div class="item logo">logo</div>
+            <div class="item nav">nav</div>
+            <div class="item content">content</div>
+            <div class="item sidenav">sidenav</div>
+            <div class="item advert">advert</div>
+            <div class="item footer">footer</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-areas (mobile)</h1>
+        <section class="grid grid-template-areas-3">
+            <div class="item logo">logo</div>
+            <div class="item nav">nav</div>
+            <div class="item content">content</div>
+            <div class="item sidenav">sidenav</div>
+            <div class="item advert">advert</div>
+            <div class="item footer">footer</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-areas (coluna e linha)</h1>
+        <pre>
+            grid-template-columns: 30% 60% 10%;
+            grid-template-rows: 50px 150px 50px;
+            grid-template-areas:
+            "logo nav nav"
+            "sidenav content advert"
+            "sidenav footer footer";
+        </pre>
+        <section class="grid grid-template-areas-4">
+            <div class="item logo">logo</div>
+            <div class="item nav">nav</div>
+            <div class="item content">content</div>
+            <div class="item sidenav">sidenav</div>
+            <div class="item advert">advert</div>
+            <div class="item footer">footer</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-areas (. para área vazia)</h1>
+        <p>Ao colocar um ponto na grid-area, cria-se uma área vazia.</p>
+        <pre>
+            grid-template-areas:
+            "logo content nav"
+            '. content advert'
+            "sidenav footer .";
+        </pre>
+        <section class="grid grid-template-areas-5">
+            <div class="item logo">logo</div>
+            <div class="item nav">nav</div>
+            <div class="item content">content</div>
+            <div class="item sidenav">sidenav</div>
+            <div class="item advert">advert</div>
+            <div class="item footer">footer</div>
+        </section>
+        </div>
+</body>
+</html>
