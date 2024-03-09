@@ -29,6 +29,28 @@ img{
     "footer footer footer";
 }
 
+@media screen and (max-width: 1200px) {
+    .estrutura{
+        grid-template-areas: 
+        "header header header"
+        "sidenav content content"
+        "sidenav anuncios anuncios"
+        "footer footer footer";
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .estrutura{
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "header"
+        "sidenav"
+        "content"
+        "anuncios"
+        "footer";
+    }
+}
+
 /*Header*/
 .header{
     grid-area: header;
@@ -70,6 +92,23 @@ img{
 Ou seja, a margem só foi aplicada entre os ítens e não no primeiro e nem após o último.
 */
 
+@media screen and (max-width: 760px){
+    .header{
+        grid-template-columns: auto;
+    }
+    .logo{
+        margin-bottom: 20px;
+    }
+
+    .header nav a{
+        font-size: 1em;
+    }
+
+    .header li + li{
+        margin-left: 10px;
+    }
+}
+
 /*Sidenav*/
 .sidenav{
     grid-area: sidenav;
@@ -93,6 +132,49 @@ Ou seja, a margem só foi aplicada entre os ítens e não no primeiro e nem apó
     background-color: #b07dfb;
 }
 
+@keyframes seta{ /*Para criar a animação da seta*/
+    from{
+        right: 30px;
+    }
+    to{
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 760px){
+    .sidenav{
+        position: relative; /*Para ajustar o posicionamento da setinha.*/
+        overflow-x: auto; /*Para criar a rolagem lateral*/
+        -webkit-overflow-scrolling: touch; /*Esta propriedade foi aplicada para que a rolagem lateral funcione corretamente em IOS e Google Chrome.*/
+        -ms-overflow-style: -ms-autohiding-scrollbar; /*Para esconder a barra em dispositivos da Microsoft.*/
+    }
+
+    .sidenav::after{
+        content: '→';
+        position: absolute; /*Para posicionar a setinha acima dos links.*/
+        top: 5px;
+        right: 30px;
+        color: rgba(0, 0, 0, .3);
+        animation: seta .5s ease-in 0s infinite alternate;
+    }
+
+    .sidenav ul{
+        display: flex; /*Para colocar os itens lado a lado*/
+    }
+
+    .sidenav ul li{
+        flex: 1 0 130px; /*Para determinar o tamanho responsivo dos itens.*/
+    }
+
+    .sidenav{
+        padding: 0 30px;
+    }
+
+    .sidenav li a{
+        margin: 30px 30px 30px 0;
+    }
+}
+
 /*Content*/
 .content{
     grid-area: content;
@@ -102,6 +184,12 @@ Ou seja, a margem só foi aplicada entre os ítens e não no primeiro e nem apó
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .content{
+        grid-template-columns: auto;
+    }    
 }
 
 .col-wide{ /*Para aplicar aos itens do site que ocuparão as 2 colunas do main.*/
@@ -226,8 +314,8 @@ p{
     align-content: start; /*Para colocar a segunda imagem imediatamente abaixo da primeira. Isso porque sem esta propriedade a segunda imagem é deslocada para o meio do site, criando um espaçamento muito grande entre elas.*/
     padding: 30px;
     gap: 30px; /*Para criar o espaçamento entre as imagens.*/
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /*Para colocar as imagens do anúncio em colunas, automaticamente com mínimo de 150px e máximo de 1fr. Com isso as 2 imagens foram divididas em 2 colunas.*/
 }
-
 
 /*Footer*/
 .footer{
